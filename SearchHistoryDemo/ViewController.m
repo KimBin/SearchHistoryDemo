@@ -7,8 +7,9 @@
 //
 
 #import "ViewController.h"
-
+#import "SearchViewController.h"
 @interface ViewController ()
+- (IBAction)pushSearchVC:(UIButton *)sender;
 
 @end
 
@@ -24,4 +25,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)pushSearchVC:(UIButton *)sender {
+    SearchViewController *searchVC = [[SearchViewController alloc]init];
+    UINavigationController *searchNavc = [[UINavigationController alloc]initWithRootViewController:searchVC];
+    [self presentViewController:searchNavc animated:YES completion:nil];
+}
 @end
